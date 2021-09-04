@@ -1,7 +1,6 @@
 Cython==0.24
 fbprophet==0.1.post1
 pystan==2.14.0.0
-python-dateutil==2.6.0
 pytz==2016.10
 
 absl-py==0.13.0
