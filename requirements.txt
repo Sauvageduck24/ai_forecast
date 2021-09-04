@@ -3,7 +3,6 @@ aiohttp==3.7.4.post0
 altair==4.1.0
 appdirs==1.4.4
 argon2-cffi==20.1.0
-arviz @ file:///home/conda/feedstock_root/build_artifacts/arviz_1618947141331/work
 astor==0.8.1
 astunparse==1.6.3
 async-timeout==3.0.1
@@ -18,7 +17,6 @@ bs4==0.0.1
 cachetools==4.2.2
 certifi==2021.5.30
 cffi==1.14.6
-cftime @ file:///home/conda/feedstock_root/build_artifacts/cftime_1621553714314/work
 chardet==4.0.0
 charset-normalizer==2.0.4
 clang==5.0
@@ -26,17 +24,12 @@ click==7.1.2
 clikit==0.6.2
 cloudpickle==1.6.0
 cmdstanpy==0.9.5
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1602866480661/work
-convertdate @ file:///home/conda/feedstock_root/build_artifacts/convertdate_1615678826465/work
 crashtest==0.3.1
 cycler==0.10.0
-Cython @ file:///home/conda/feedstock_root/build_artifacts/cython_1626221483810/work
 debugpy==1.4.1
 decorator==5.0.9
 defusedxml==0.7.1
 entrypoints==0.3
-ephem @ file:///home/conda/feedstock_root/build_artifacts/ephem_1623723016860/work
-fbprophet @ file:///home/conda/feedstock_root/build_artifacts/fbprophet_1599365532360/work
 flatbuffers==1.12
 gast==0.4.0
 gitdb==4.0.7
@@ -49,8 +42,6 @@ grpcio==1.39.0
 gym==0.19.0
 gym-anytrading==1.2.0
 h5py==3.1.0
-hijri-converter @ file:///home/conda/feedstock_root/build_artifacts/hijri-converter_1629118578986/work
-holidays @ file:///home/conda/feedstock_root/build_artifacts/holidays_1626824287322/work
 httpstan==4.5.0
 idna==3.2
 install==1.3.4
@@ -68,8 +59,6 @@ jupyterlab-pygments==0.1.2
 jupyterlab-widgets==1.0.0
 keras==2.6.0
 Keras-Preprocessing==1.1.2
-kiwisolver @ file:///home/conda/feedstock_root/build_artifacts/kiwisolver_1610099769230/work
-korean-lunar-calendar @ file:///home/conda/feedstock_root/build_artifacts/korean_lunar_calendar_1589354365811/work
 LunarCalendar==0.0.9
 lxml==4.6.3
 lz4==3.1.3
@@ -85,12 +74,9 @@ nbclient==0.5.4
 nbconvert==6.1.0
 nbformat==5.1.3
 nest-asyncio==1.5.1
-netCDF4 @ file:///home/conda/feedstock_root/build_artifacts/netcdf4_1624308161944/work
 notebook==6.4.3
-numpy @ file:///home/conda/feedstock_root/build_artifacts/numpy_1622014599281/work
 oauthlib==3.1.1
 opt-einsum==3.3.0
-packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1625323647219/work
 pandas==1.3.2
 pandas-datareader==0.10.0
 pandocfilters==1.4.3
@@ -116,14 +102,11 @@ pyparsing==2.4.7
 pyrsistent==0.18.0
 pysimdjson==3.2.0
 pystan==3.2.0
-python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
-pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1612179539967/work
 pyzmq==22.2.1
 requests==2.26.0
 requests-oauthlib==1.3.0
 rsa==4.7.2
 scikit-learn==0.24.2
-scipy @ file:///home/conda/feedstock_root/build_artifacts/scipy_1619561901336/work
 Send2Trash==1.8.0
 setuptools-git==1.2
 six==1.15.0
@@ -146,8 +129,6 @@ threadpoolctl==2.2.0
 toml==0.10.2
 toolz==0.11.1
 torch==1.9.0
-tornado @ file:///home/conda/feedstock_root/build_artifacts/tornado_1610094706440/work
-tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1628985621016/work
 traitlets==5.0.5
 typeguard==2.12.1
 typing-extensions==3.7.4.3
@@ -161,6 +142,5 @@ webencodings==0.5.1
 Werkzeug==2.0.1
 widgetsnbextension==3.5.1
 wrapt==1.12.1
-xarray @ file:///home/conda/feedstock_root/build_artifacts/xarray_1627311788418/work
 yarl==1.6.3
 yfinance==0.1.63
