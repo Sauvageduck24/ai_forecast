@@ -89,7 +89,7 @@ if check2:
     epochs2=st.slider('Epochs',300,1000,key='8')
     prediction2=st.button('Make prediction',key='9')
     if prediction2:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1wk',prediction_days=hour, target=target,interval='1h', epochs=epochs)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1wk',prediction_days=hour2, target=target2,interval='1h', epochs=epochs2)
         plot(test_data,target2)
         st.write(f'Prediction: {prediction}')
         st.write(f'Loss: {loss}')
@@ -103,7 +103,7 @@ if check3:
     prediction3=st.button('Make prediction',key='14')
     hour3=hour3*5
     if prediction3:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1wk',prediction_days=hour, target=target,interval='1h', epochs=epochs)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1wk',prediction_days=hour3, target=target3,interval='1h', epochs=epochs3)
         plot(test_data,target3)
         st.write(f'Prediction: {prediction}')
         st.write(f'Loss: {loss}')
