@@ -17,51 +17,54 @@ st.title('Aplicación predicción bolsa de valores')
 stocks = ('SAN.MC', 'IAG.MC', 'BBVA.MC', '^IBEX')
 selected_stock = st.selectbox('Seleccione la compañía para hacer la predicción', stocks)
 
-n_years = st.slider('Predición por años', 1, 4)
-period = n_years * 365
+st.subheader('Predicción por años')
+check4=st.checkbox('Mostrar', key='15')
+if check4:
+	n_years = st.slider('Predición por años', 1, 4)
+	period = n_years * 365
 
-@st.cache
-def load_data(ticker):
-    data = yf.download(ticker, START, TODAY)
-    data.reset_index(inplace=True)
-    return data
+	@st.cache
+	def load_data(ticker):
+	    data = yf.download(ticker, START, TODAY)
+	    data.reset_index(inplace=True)
+	    return data
 
-	
-data_load_state = st.text('Cargando datos...')
-data = load_data(selected_stock)
-data_load_state.text('Datos cargados... Hecho!')
 
-#st.subheader('Tabla de datos')
-#st.write(data.tail())
+	data_load_state = st.text('Cargando datos...')
+	data = load_data(selected_stock)
+	data_load_state.text('Datos cargados... Hecho!')
 
-# Plot raw data
-def plot_raw_data():
-	fig = go.Figure()
-	fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_apertura"))
-	fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_cierre"))
-	fig.layout.update(title_text='Datos mostrados de forma gráfica', xaxis_rangeslider_visible=True)
-	st.plotly_chart(fig)
+	#st.subheader('Tabla de datos')
+	#st.write(data.tail())
 
-# Predict forecast with Prophet.
-df_train = data[['Date','Close']]
-df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
+	# Plot raw data
+	def plot_raw_data():
+		fig = go.Figure()
+		fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name="stock_apertura"))
+		fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name="stock_cierre"))
+		fig.layout.update(title_text='Datos mostrados de forma gráfica', xaxis_rangeslider_visible=True)
+		st.plotly_chart(fig)
 
-@st.cache
-def infer():
-    m = Prophet()
-    m.fit(df_train)
-    future = m.make_future_dataframe(periods=period)
-    forecast = m.predict(future)
-    return forecast,m
+	# Predict forecast with Prophet.
+	df_train = data[['Date','Close']]
+	df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
 
-# Show and plot forecast
-st.subheader('Datos de predicción')
-forecast,m=infer()
-#st.write(forecast.tail())
-    
-st.write(f'Predición hecha para {n_years} año(s)')
-fig1 = plot_plotly(m, forecast)
-st.plotly_chart(fig1)
+	@st.cache
+	def infer():
+	    m = Prophet()
+	    m.fit(df_train)
+	    future = m.make_future_dataframe(periods=period)
+	    forecast = m.predict(future)
+	    return forecast,m
+
+	# Show and plot forecast
+	st.subheader('Datos de predicción')
+	forecast,m=infer()
+	#st.write(forecast.tail())
+
+	st.write(f'Predición hecha para {n_years} año(s)')
+	fig1 = plot_plotly(m, forecast)
+	st.plotly_chart(fig1)
 
 targets=['Open','High','Low','Close']
 
