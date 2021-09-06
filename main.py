@@ -69,7 +69,7 @@ st.write("Componentes de la predicción")
 fig2 = m.plot_components(forecast)
 st.write(fig2)
 
-targets=['Apertura','Alto','Bajo','Cierre']
+targets=['Open','High','Low','Close']
 
 st.subheader('Predicción por horas')
 check1=st.checkbox('Mostrar', key='0')
