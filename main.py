@@ -63,10 +63,6 @@ st.write(f'Predición hecha para {n_years} año(s)')
 fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
-st.write("Componentes de la predicción")
-fig2 = m.plot_components(forecast)
-st.write(fig2)
-
 targets=['Open','High','Low','Close']
 
 st.subheader('Predicción por horas')
