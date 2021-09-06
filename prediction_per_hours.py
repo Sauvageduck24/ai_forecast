@@ -78,8 +78,6 @@ class get_prediction():
 
         prediction=model.predict(real_data)
         prediction=scaler.inverse_transform(prediction)
-        print(f'Prediction: {prediction}')
-        print(f'Predicted prices: {predicted_prices}')
         
         loss_return=history.history['loss']
         loss_return=loss_return.pop()
