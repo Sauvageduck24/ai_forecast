@@ -1,2 +1,1 @@
-# ai_forecast
-# bromita
+# Stock prediction app in spanish
