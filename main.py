@@ -61,7 +61,7 @@ st.subheader('Datos de predicción')
 forecast,m=infer()
 st.write(forecast.tail())
     
-st.write(f'Predición hecha {n_years} año(s)')
+st.write(f'Predición hecha para {n_years} año(s)')
 fig1 = plot_plotly(m, forecast)
 st.plotly_chart(fig1)
 
