@@ -88,7 +88,7 @@ check2=st.checkbox('Mostrar', key='5')
 if check2:
     target2=st.selectbox('Etiqueta',targets,key='6')
     hour2=st.slider('Días de la predicción',1,3,key='7')
-    st.text('Pasos equilibrados 750')
+    st.text('Pasos equilibrados 650')
     st.text('Después de la predicción, si desea hacer otra, reducir los pasos en un rango de 50-100')
     epochs2=st.slider('Pasos',300,1000,key='8')
     prediction2=st.button('Hacer predicción',key='9')
