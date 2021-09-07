@@ -76,7 +76,7 @@ if check1:
     epochs=st.slider('Pasos',300,1000,key='3')
     prediction=st.button('Hacer predicción',key='4')
     if prediction:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1wk',prediction_days=hour, target=target,interval='1h', epochs=epochs)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='2wk',prediction_days=hour, target=target,interval='1h', epochs=epochs)
         #plot(test_data,target)
         st.write(f'Predicción: {prediction}')
         st.write(f'Pérdida en el entrenamiento: {loss}')
@@ -89,7 +89,7 @@ if check2:
     epochs2=st.slider('Pasos',300,1000,key='8')
     prediction2=st.button('Hacer predicción',key='9')
     if prediction2:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='2mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2)
         #plot(test_data,target2)
         st.write(f'Predicción: {prediction}')
         st.write(f'Pérdida en el entrenamiento: {loss}')
@@ -103,7 +103,7 @@ if check3:
     prediction3=st.button('Hacer predicción',key='14')
     hour3=hour3*5
     if prediction3:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='1mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='3mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3)
         #plot(test_data,target3)
         st.write(f'Predicción: {prediction}')
         st.write(f'Pérdida en el entrenamiento: {loss}')
