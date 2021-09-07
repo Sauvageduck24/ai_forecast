@@ -74,7 +74,6 @@ if check1:
     target=st.selectbox('Etiqueta',targets,key='1')
     hour=st.slider('Horas de la predicción',1,5,key='2')
     st.text('Pasos equilibrados 750')
-    st.text('Después de la predicción, si desea hacer otra, reducir los pasos en un rango de 50-100')
     epochs=st.slider('Pasos',300,1000,key='3')
     prediction=st.button('Hacer predicción',key='4')
     if prediction:
@@ -88,8 +87,7 @@ check2=st.checkbox('Mostrar', key='5')
 if check2:
     target2=st.selectbox('Etiqueta',targets,key='6')
     hour2=st.slider('Días de la predicción',1,3,key='7')
-    st.text('Pasos equilibrados 650')
-    st.text('Después de la predicción, si desea hacer otra, reducir los pasos en un rango de 50-100')
+    st.text('Pasos equilibrados 625')
     epochs2=st.slider('Pasos',300,1000,key='8')
     prediction2=st.button('Hacer predicción',key='9')
     if prediction2:
@@ -104,7 +102,6 @@ if check3:
     target3=st.selectbox('Etiqueta',targets,key='11')
     hour3=st.slider('Semanas de predicción',1,3,key='12')
     st.text('Pasos equilibrados 750')
-    st.text('Después de la predicción, si desea hacer otra, reducir los pasos en un rango de 50-100')
     epochs3=st.slider('Pasos',300,1000,key='13')
     prediction3=st.button('Hacer predicción',key='14')
     hour3=hour3*5
