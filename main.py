@@ -109,7 +109,7 @@ if check3:
     prediction3=st.button('Hacer predicción',key='14')
     hour3=hour3*5
     if prediction3:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='3mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3)
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='6mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3)
         #plot(test_data,target3)
         st.write(f'Predicción: {prediction}')
         st.write(f'Pérdida en el entrenamiento: {loss}')
