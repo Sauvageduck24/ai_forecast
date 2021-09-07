@@ -116,5 +116,5 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 st.write('')
-st.markdown('Si la predicción = [[nan]], contactar al programador')
+st.markdown('Si la predicción = __[[nan]]__, contactar al programador')
 st.markdown('Última actualización (07-09-2021 / 11:00): mejora de la perdida de entrenamiento aumentando la tasa de obtención de datos')
