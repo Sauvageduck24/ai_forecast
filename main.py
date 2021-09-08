@@ -93,7 +93,7 @@ if check2:
     epochs2=st.slider('Pasos',1,500,key='8')
     prediction2=st.button('Hacer predicción',key='9')
     if prediction2:
-        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='7mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='2d',interval_period='1d')
+        prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='7mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='5d',interval_period='1d')
         #plot(test_data,target2)
         st.write(f'Predicción: {prediction}')
         st.write(f'Pérdida en el entrenamiento: {loss}')
