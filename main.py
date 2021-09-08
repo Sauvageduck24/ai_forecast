@@ -73,8 +73,8 @@ check1=st.checkbox('Mostrar', key='0')
 if check1:
     target=st.selectbox('Etiqueta',targets,key='1')
     hour=st.slider('Horas de la predicción',1,5,key='2')
-    st.text('Pasos equilibrados 50, (__para__ santander)')
-    st.text('Pasos equilibrados 150, (__para__ iag)')
+    st.text('Pasos equilibrados 50, __para__ santander')
+    st.text('Pasos equilibrados 150, __para__ iag')
     epochs=st.slider('Pasos',1,500,key='3')
     prediction=st.button('Hacer predicción',key='4')
     if prediction:
