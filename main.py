@@ -73,8 +73,8 @@ check1=st.checkbox('Mostrar', key='0')
 if check1:
     target=st.selectbox('Etiqueta',targets,key='1')
     hour=st.slider('Horas de la predicción',1,5,key='2')
-    st.text('Pasos equilibrados 50, __para__ santander')
-    st.text('Pasos equilibrados 150, __para__ iag')
+    st.text('Pasos equilibrados 50, para santander')
+    st.text('Pasos equilibrados 150, para iag')
     epochs=st.slider('Pasos',1,500,key='3')
     prediction=st.button('Hacer predicción',key='4')
     if prediction:
@@ -88,8 +88,8 @@ check2=st.checkbox('Mostrar', key='5')
 if check2:
     target2=st.selectbox('Etiqueta',targets,key='6')
     hour2=st.slider('Días de la predicción',1,3,key='7')
-    st.text('Pasos equilibrados 50, (**para** santander)')
-    st.text('Pasos equilibrados 150, (**para** iag)')
+    st.text('Pasos equilibrados 50, para santander')
+    st.text('Pasos equilibrados 150, para iag')
     epochs2=st.slider('Pasos',1,500,key='8')
     prediction2=st.button('Hacer predicción',key='9')
     if prediction2:
@@ -103,8 +103,8 @@ check3=st.checkbox('Mostrar', key='10')
 if check3:
     target3=st.selectbox('Etiqueta',targets,key='11')
     hour3=st.slider('Semanas de predicción',1,3,key='12')
-    st.text('Pasos equilibrados 50, (**para** santander)')
-    st.text('Pasos equilibrados 150, (**para** iag)')
+    st.text('Pasos equilibrados 50, para santander')
+    st.text('Pasos equilibrados 150, para iag')
     epochs3=st.slider('Pasos',1,500,key='13')
     prediction3=st.button('Hacer predicción',key='14')
     hour3=hour3*5
