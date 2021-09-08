@@ -12,7 +12,7 @@ import tensorflow as tf
 
 class get_prediction():
     
-    def start(company,period, prediction_days,target,interval,epochs):
+    def start(company,period, prediction_days,target,interval,epochs,test_period,interval_period):
 
         data=yf.download(company,period=period,interval=interval)
 
@@ -41,19 +41,11 @@ class get_prediction():
         model.add(tf.keras.layers.Bidirectional(LSTM(50)))
         model.add(Dropout(.2))
         model.add(Dense(1))
-        model.compile(loss='mean_squared_error',optimizer=tfa.optimizers.AdamW(learning_rate=0.01, weight_decay=lr_decayed_fn))
-
-        companyy=company.replace('.','')
-        companyy=companyy.lower()
-
-        #model_ckpt=tf.keras.callbacks.ModelCheckpoint(f'checkpoints/model_pred_hour_{companyy}.h5',monitor='loss',verbose=1,save_best_only=True, save_weights_only=True,mode='max')
-
-        #model.load_weights(f'checkpoints/model_pred_hour_{companyy}.h5')
+        model.compile(loss='mean_squared_error',optimizer=tf.keras.optimizers.Adam(learning_rate=0.001))
 
         history=model.fit(x_train, y_train,epochs=epochs, batch_size=64, verbose=1)
 
-        #test_data=web.DataReader(company,'yahoo',test_start,test_end)
-        test_data=yf.download(company,period=period, interval=interval)
+        test_data=yf.download(company,period=test_period, interval=interval_period)
 
         actual_prices=test_data[target].values
         total_dataset=pd.concat((data[target], test_data[target]),axis=1)
@@ -72,28 +64,15 @@ class get_prediction():
         predicted_prices=model.predict(x_test)
         predicted_prices=scaler.inverse_transform(predicted_prices)
 
-        real_data = [model_inputs[len(model_inputs) + 0 - prediction_days:len(model_inputs+1), 0]]
+        real_data = [model_inputs[len(model_inputs) - prediction_days:len(model_inputs+1), 0]]
         real_data = np.array(real_data)
         real_data=np.reshape(real_data, (real_data.shape[0], real_data.shape[1] ,1))
 
         prediction=model.predict(real_data)
         prediction=scaler.inverse_transform(prediction)
+        print(f'Prediction: {prediction}')
         
         loss_return=history.history['loss']
         loss_return=loss_return.pop()
 
         return prediction,test_data, predicted_prices,prediction, loss_return
-
-#get_prediction.start(company='san.mc',period='1wk',prediction_days=1,target='High', interval='1h',epochs=700)
-#get_prediction.start(company='san.mc',period='1wk',prediction_days=2,target='High', interval='1h')
-#get_prediction.start(company='san.mc',period='5d',prediction_days=2,target='Close', interval='1h')
-#get_prediction.start(company='san.mc',period='5d',prediction_days=90,target='Close', interval='1h')
-
-# Mientras más cercana es la fecha de entrenamiento, más se asemeja la predicción del modelo
-
-# Prediction_DAYS el mínimo es 2 (recomendable usar prediction_days=2)
-
-# Si la predicción es para un día que todavía no ha cerrado es mejor establecer period='2d'
-
-#3.135
-#3.146
