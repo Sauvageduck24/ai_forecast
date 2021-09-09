@@ -43,6 +43,13 @@ class get_prediction():
         model.add(Dense(1))
         model.compile(loss='mean_squared_error',optimizer=tf.keras.optimizers.Adam(learning_rate=0.001))
 
+        #companyy=company.replace('.','')
+        #companyy=companyy.lower()
+
+        #model_ckpt=tf.keras.callbacks.ModelCheckpoint(f'checkpoints/model_pred_hour_{companyy}.h5',monitor='loss',verbose=1,save_best_only=True, save_weights_only=True,mode='max')
+
+        #model.load_weights(f'checkpoints/model_pred_hour_{companyy}.h5')
+
         history=model.fit(x_train, y_train,epochs=epochs, batch_size=64, verbose=1)
 
         test_data=yf.download(company,period=test_period, interval=interval_period)
