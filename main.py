@@ -79,12 +79,17 @@ if check1:
     prediction=st.button('Hacer predicción',key='4')
     if prediction:
         if selected_stock=='SAN.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='7wk',prediction_days=hour, target=target,interval='1h', epochs=epochs,test_period='3h',interval_period='1h')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8wk',prediction_days=hour, target=target,interval='1h', epochs=epochs,test_period='3h',interval_period='1h')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
         if selected_stock=='IAG.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='6wk',prediction_days=hour, target=target,interval='1h', epochs=epochs,test_period='3h',interval_period='1h')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8wk',prediction_days=hour, target=target,interval='1h', epochs=epochs,test_period='3h',interval_period='1h')
+            #plot(test_data,target)
+            st.write(f'Predicción: {prediction}')
+            st.write(f'Pérdida en el entrenamiento: {loss}')
+        if selected_stock=='BBVA.MC':
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8wk',prediction_days=hour, target=target,interval='1h', epochs=epochs,test_period='3h',interval_period='1h')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
@@ -101,12 +106,17 @@ if check2:
     prediction2=st.button('Hacer predicción',key='9')
     if prediction2:
         if selected_stock=='SAN.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='7mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='3d',interval_period='1d')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='3d',interval_period='1d')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
         if selected_stock=='IAG.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='6mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='3d',interval_period='1d')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='3d',interval_period='1d')
+            #plot(test_data,target)
+            st.write(f'Predicción: {prediction}')
+            st.write(f'Pérdida en el entrenamiento: {loss}')
+        if selected_stock=='BBVA.MC':
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour2, target=target2,interval='1d', epochs=epochs2,test_period='3d',interval_period='1d')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
@@ -124,15 +134,21 @@ if check3:
     hour3=hour3*5
     if prediction3:
         if selected_stock=='SAN.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='7mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3,test_period='3d',interval_period='1d')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3,test_period='3d',interval_period='1d')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
         if selected_stock=='IAG.MC':
-            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='6mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3,test_period='3d',interval_period='1d')
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3,test_period='3d',interval_period='1d')
             #plot(test_data,target)
             st.write(f'Predicción: {prediction}')
             st.write(f'Pérdida en el entrenamiento: {loss}')
+        if selected_stock=='BBVA.MC':
+            prediction,test_data, predicted_prices,prediction,loss=get_prediction.start(company=selected_stock,period='8mo',prediction_days=hour3, target=target3,interval='1d', epochs=epochs3,test_period='3d',interval_period='1d')
+            #plot(test_data,target)
+            st.write(f'Predicción: {prediction}')
+            st.write(f'Pérdida en el entrenamiento: {loss}')
+
 
 hide_streamlit_style = """
             <style>
