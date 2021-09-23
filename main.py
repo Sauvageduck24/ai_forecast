@@ -12,7 +12,6 @@ from plotly import graph_objs as go
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-Print(03icp!
 st.title('Aplicación predicción bolsa de valores')
 
 stocks = ('SAN.MC', 'IAG.MC', 'BBVA.MC', '^IBEX')
