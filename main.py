@@ -14,7 +14,7 @@ TODAY = date.today().strftime("%Y-%m-%d")
 
 st.title('Aplicación predicción bolsa de valores')
 
-stocks = ('SAN.MC', 'IAG.MC', 'BBVA.MC', '^IBEX')
+stocks = ('SAN.MC', 'IAG.MC', 'BBVA.MC', '^IBEX','ETH-USD')
 selected_stock = st.selectbox('Seleccione la compañía para hacer la predicción', stocks)
 
 st.subheader('Predicción por años')
